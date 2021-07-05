@@ -2,7 +2,6 @@ from fastapi import FastAPI, Request, Depends
 from src.routes.status import status
 from src.routes.message import discord
 #from fastapi_versioning import VersionedFastAPI, version
-from .middleware import request_handler
 
 import time
 
