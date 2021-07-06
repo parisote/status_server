@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 from datetime import datetime
 from bson import ObjectId
 from src.models.object_id import PyObjectId
@@ -8,7 +8,7 @@ class MessageModel(BaseModel):
     author: str = Field(...)
     group: str = Field(...)
     value: str = Field(...)
-    blame_timestamp: datetime = Field(...)
+    blame_timestamp: datetime = Field(default_factory=datetime.now)
 
     class Config:
         allow_population_by_field_name = True
