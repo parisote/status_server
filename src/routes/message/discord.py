@@ -9,6 +9,7 @@ import requests
 import os
 from src.routes.security import get_api_key
 from fastapi.security.api_key import APIKey
+from src.controller.controller import Controller
 
 
 routes = APIRouter(prefix="/discord")
