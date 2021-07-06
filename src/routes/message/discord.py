@@ -16,7 +16,7 @@ collection = os.environ['COLLECTION_DISCORD']
 bot_token = os.environ['TELEGRAM_KEY']
 telegram_id = os.environ['TELEGRAM_TEST_GROUP']
 
-@routes.post("/", response_description="Add new message to discord", response_model=MessageModel)
+@routes.post("/", response_description="Add new message to discord", response_model=MessageModel, tags=['Discord'])
 async def add_message(add_message: MessageModel = Body(...), api_key: APIKey = Depends(get_api_key)):
     obj = Controller.insert_into_db(add_message, collection)
     await send_message_telegram(add_message)
