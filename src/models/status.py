@@ -8,7 +8,7 @@ class StatusModel(BaseModel):
     server: str = Field(...)
     implementation: str = Field(...)
     value: str = Field(...)
-    blame_timestamp: datetime = Field(default_factory=datetime.utcnow())
+    blame_timestamp: datetime = Field(default_factory=datetime.utc)
 
     class Config:
         allow_population_by_field_name = True
