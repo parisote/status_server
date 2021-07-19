@@ -5,9 +5,7 @@ from src.routes.message import discord
 
 import time
 
-app = FastAPI()
-#app = FastAPI(docs_url=None)
-
+app = FastAPI(docs_url=None, redoc_url=None)
 
 #GET ROOT
 @app.get("/")
